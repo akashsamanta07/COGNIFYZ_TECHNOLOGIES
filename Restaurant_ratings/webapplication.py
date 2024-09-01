@@ -30,7 +30,6 @@ df=sc_model.transform(df)
 
 if Button:
     output = main_model.predict(df)
-    st.write(output)
     if output <= 2.4 :
         st.write("Rating : Poor")
     elif output <= 3.4 :
