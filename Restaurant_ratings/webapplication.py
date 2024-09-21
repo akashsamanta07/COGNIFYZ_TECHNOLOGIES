@@ -27,9 +27,10 @@ df["City"]=city_model.transform(df["City"])
 df["Has Table booking"]=htb_model.transform(df["Has Table booking"])
 df["Has Online delivery"]=hod_model.transform(df["Has Online delivery"])
 df=sc_model.transform(df)
+output = main_model.predict(df)
 
 if Button:
-    output = main_model.predict(df)
+    st.markdown("PREDICTING AGGREGATE RATINGS:" + str(output))
     if output <= 2.4 :
         st.write("Rating : Poor")
     elif output <= 3.4 :
